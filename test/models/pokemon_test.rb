@@ -17,10 +17,10 @@ class PokemonTest < ActiveSupport::TestCase
 
 	test "pokemon must have a unique name" do
 		p1 = Pokemon.first
-		p2 = Pokemon.new
+		p2 = Pokemon.first.dup
 		p2.name = "Udo"
-		assert p1.valid?, "pokemon should be valid"
+		assert p2.valid?, "pokemon should be valid"
 		p2.name = p1.name
-		assert_not p1.valid?, "pokemon should be invalid"
+		assert_not p2.valid?, "pokemon should be invalid"
 	end
 end
