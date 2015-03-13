@@ -27,14 +27,6 @@
     <% end %>
     </ol>
   </div>
-  <div class="weaknesses">
-    <%= label_tag "Weaknesses" %><br>
-    <ul>
-    <%= f.fields_for :weaknesses do |w| %>
-      <%= render "weakness_fields", builder: w %>
-    <% end %>
-    </ul>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
