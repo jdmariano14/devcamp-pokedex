@@ -40,6 +40,7 @@ class PokemonsController < ApplicationController
         format.html { redirect_to @pokemon, notice: 'Pokemon was successfully created.' }
         format.json { render :show, status: :created, location: @pokemon }
       else
+        @pokemon.build_associations
         format.html { render :new }
         format.json { render json: @pokemon.errors, status: :unprocessable_entity }
       end
