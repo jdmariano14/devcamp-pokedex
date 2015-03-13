@@ -1,9 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  type_id: 1
+bulbasaur:
+  name: 'Bulbasaur'
+  type: grass
 
-two:
-  name: MyString
-  type_id: 1
+charmander:
+  name: 'Charmander'
+  type: fire
+
+squirtle:
+  name: 'Squirtle'
+  type: water
