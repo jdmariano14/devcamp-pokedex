@@ -3,6 +3,7 @@ class Pokemon < ActiveRecord::Base
 	# Validations
 	########################################
 	validates :name, presence: true
+	validates :name, uniqueness: true
 	validates :type, presence: true
 	########################################
 	# Associations
