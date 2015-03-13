@@ -10,5 +10,14 @@
   <%= @pokemon.type_id %>
 </p>
 
+<% if @pokemon.moves.count > 0 %>
+  <p><strong>Moves:</strong></p>
+  <ol>
+  <% @pokemon.moves.each do |move| %>
+    <li><%= move.name %></li>
+  <% end %>
+  </ol>
+<% end %>
+
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemons_path %>

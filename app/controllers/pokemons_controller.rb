@@ -15,10 +15,12 @@ class PokemonsController < ApplicationController
   # GET /pokemons/new
   def new
     @pokemon = Pokemon.new
+    @pokemon.build_moves
   end
 
   # GET /pokemons/1/edit
   def edit
+    @pokemon.build_moves
   end
 
   # POST /pokemons
@@ -69,6 +71,7 @@ class PokemonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokemon_params
-      params.require(:pokemon).permit(:name, :type_id)
+      params.require(:pokemon).permit(:name, :type_id, \
+        pokemon_moves_attributes: [:move_id, :_destroy])
     end
 end

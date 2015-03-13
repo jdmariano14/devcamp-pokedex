@@ -19,6 +19,14 @@
     <%= f.label :type_id %><br>
     <%= f.collection_select(:type_id, Type.all, :id, :name, prompt: true) %>
   </div>
+  <div class="moves">
+    <%= label_tag "Moves" %><br>
+    <ol>
+    <%= f.fields_for :pokemon_moves do |m| %>
+      <%= render "move_fields", builder: m %>
+    <% end %>
+    </ol>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
