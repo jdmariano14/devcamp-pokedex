@@ -9,9 +9,9 @@ class Pokemon < ActiveRecord::Base
 	########################################
 	belongs_to :type
 
-	has_many :pokemon_moves
+	has_many :pokemon_moves, :dependent => :destroy
 	has_many :moves, :through => :pokemon_moves
-	accepts_nested_attributes_for :pokemon_moves, :reject_if => lambda { |m| m[:move_id].blank? }, :allow_destroy => true
+	accepts_nested_attributes_for :pokemon_moves, :reject_if => lambda { |m| m[:move_id].blank?}, :allow_destroy => true
 
 	has_many :weaknesses
 	########################################

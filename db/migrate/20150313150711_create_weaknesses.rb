@@ -1,6 +1,6 @@
 class CreateWeaknesses < ActiveRecord::Migration
   def up
-    create_table :weaknesses, :id => false  do |t|
+    create_table :weaknesses do |t|
       t.integer :pokemon_id
       t.integer :type_id
       t.timestamps null: false

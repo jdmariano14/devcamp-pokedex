@@ -20,7 +20,7 @@ ActiveRecord::Schema.define(version: 20150313150711) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "pokemon_moves", id: false, force: :cascade do |t|
+  create_table "pokemon_moves", force: :cascade do |t|
     t.integer  "pokemon_id"
     t.integer  "move_id"
     t.datetime "created_at", null: false
@@ -40,7 +40,7 @@ ActiveRecord::Schema.define(version: 20150313150711) do
     t.datetime "updated_at", null: false
   end
 
-  create_table "weaknesses", id: false, force: :cascade do |t|
+  create_table "weaknesses", force: :cascade do |t|
     t.integer  "pokemon_id"
     t.integer  "type_id"
     t.datetime "created_at", null: false

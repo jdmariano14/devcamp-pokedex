@@ -72,6 +72,6 @@ class PokemonsController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def pokemon_params
       params.require(:pokemon).permit(:name, :type_id, \
-        pokemon_moves_attributes: [:move_id, :_destroy])
+        pokemon_moves_attributes: [:id, :move_id, :_destroy])
     end
 end
