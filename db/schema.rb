@@ -11,11 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150313012133) do
+ActiveRecord::Schema.define(version: 20150313150711) do
 
   create_table "moves", force: :cascade do |t|
     t.string   "name"
     t.integer  "type_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "pokemon_moves", id: false, force: :cascade do |t|
+    t.integer  "pokemon_id"
+    t.integer  "move_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -29,6 +36,13 @@ ActiveRecord::Schema.define(version: 20150313012133) do
 
   create_table "types", force: :cascade do |t|
     t.string   "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "weaknesses", id: false, force: :cascade do |t|
+    t.integer  "pokemon_id"
+    t.integer  "type_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
