@@ -18,6 +18,13 @@ class PokemonsController < ApplicationController
     @pokemon.build_associations
   end
 
+  # GET /pokemons/1/new_evolution
+  def new_evolution
+    @pokemon = Pokemon.find(params[:id]).dup
+    @pokemon.id = nil
+    @pokemon.build_associations
+  end
+
   # GET /pokemons/1/edit
   def edit
     @pokemon.build_associations
