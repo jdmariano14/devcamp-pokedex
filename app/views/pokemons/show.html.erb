@@ -19,5 +19,16 @@
   </ol>
 <% end %>
 
+<p><strong>Weaknesses:</strong></p>
+<% if @pokemon.weaknesses.count > 0 %>
+  <ul>
+  <% @pokemon.weaknesses.each do |weakness| %>
+    <li><%= weakness.type.name %></li>
+  <% end %>
+  </ul>
+<% else %>
+  <p>None</p>
+<% end %>
+
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemons_path %>
