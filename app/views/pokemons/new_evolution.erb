@@ -2,5 +2,5 @@
 
 <%= render 'form' %>
 
-<%= link_to 'Show Prior', @pokemon_t %> |
+<%= link_to 'Show Prior', Pokemon.find(params[:id]) %> |
 <%= link_to 'Back', pokemons_path %>
