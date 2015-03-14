@@ -1,9 +1,9 @@
 class AddImageToPokemon < ActiveRecord::Migration
-  def self.up
+  def up
     add_attachment :pokemons, :image
   end
 
-  def self.down
+  def down
     remove_attachment :pokemons, :image
   end
 end

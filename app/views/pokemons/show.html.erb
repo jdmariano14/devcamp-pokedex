@@ -5,15 +5,21 @@
   <%= @pokemon.name %>
 </p>
 
+<% if @pokemon.evolves_from %>
+  <strong>Evolves From:</strong><br>
+  <%= @pokemon.evolves_from.name %>
+<% end %>
+
 <p>
   <strong>Type:</strong>
   <%= @pokemon.type_id %>
 </p>
 
 <% if @pokemon.image %>
-  <strong>Image:</strong>
+  <strong>Image:</strong><br>
   <%= image_tag @pokemon.image.url(:medium) %>
 <% end %>
+
 
 <% if @pokemon.moves.count > 0 %>
   <p><strong>Moves:</strong></p>
@@ -24,15 +30,16 @@
   </ol>
 <% end %>
 
-<p><strong>Weaknesses:</strong></p>
+<p><strong>Weaknesses:</strong>
 <% if @pokemon.weaknesses.count > 0 %>
+  </p>
   <ul>
   <% @pokemon.weaknesses.each do |weakness| %>
     <li><%= weakness.type.name %></li>
   <% end %>
   </ul>
 <% else %>
-  <p>None</p>
+  <br>None</p>
 <% end %>
 
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150314000747) do
+ActiveRecord::Schema.define(version: 20150314004148) do
 
   create_table "moves", force: :cascade do |t|
     t.string   "name"
@@ -37,6 +37,7 @@ ActiveRecord::Schema.define(version: 20150314000747) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.integer  "evolves_from_id"
   end
 
   create_table "types", force: :cascade do |t|

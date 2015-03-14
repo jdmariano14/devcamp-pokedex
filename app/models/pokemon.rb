@@ -3,6 +3,7 @@ class Pokemon < ActiveRecord::Base
 	# Associations
 	########################################
 	belongs_to :type
+	belongs_to :evolves_from, class_name: "Pokemon"
     
     has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "32x32>" }, :default_url => "/images/:style/missing.png"
 
