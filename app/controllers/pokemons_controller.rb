@@ -5,6 +5,8 @@ class PokemonsController < ApplicationController
   # GET /pokemons.json
   def index
     @pokemons = Pokemon.all
+    # this is for testing
+    # binding.pry
   end
 
   # GET /pokemons/1

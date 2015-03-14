@@ -24,6 +24,10 @@ gem 'jbuilder', '~> 2.0'
 gem 'sdoc', '~> 0.4.0', group: :doc
 # Use paperclip for file attachments
 gem "paperclip", :git => "git://github.com/thoughtbot/paperclip.git"
+# Use pry for testing
+gem "pry" #, :git => "git://github.com/pry/pry.git"
+# Use rb-readline
+gem "rb-readline" #,:git :=> "git://github.com/ConnorAtherton/rb-readline.git"
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
 
