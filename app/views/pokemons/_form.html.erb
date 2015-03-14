@@ -12,12 +12,16 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :name %><br>
+    <%= f.label :name, "Name*" %><br>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :type_id %><br>
+    <%= f.label :type_id, "Type*" %><br>
     <%= f.collection_select(:type_id, Type.all, :id, :name, prompt: true) %>
+  </div>
+  <div class="field">
+    <%= f.label :image %><br>
+    <%= f.file_field :image %>
   </div>
   <div class="moves">
     <%= label_tag "Moves" %><br>
@@ -37,5 +41,8 @@
   </div>
   <div class="actions">
     <%= f.submit %>
+  </div>
+  <div class="note">
+    <p><small>Fields with an asterisk (*) are required.</small></p>
   </div>
 <% end %>

@@ -1,14 +1,10 @@
 class Pokemon < ActiveRecord::Base
 	########################################
-	# Validations
-	########################################
-	validates :name, presence: true
-	validates :name, uniqueness: true
-	validates :type, presence: true
-	########################################
 	# Associations
 	########################################
 	belongs_to :type
+    
+    has_attached_file :image, :styles => { :medium => "300x300>", :thumb => "32x32>" }, :default_url => "/images/:style/missing.png"
 
 	has_many :pokemon_moves, :dependent => :destroy
 	has_many :moves, :through => :pokemon_moves
@@ -16,6 +12,13 @@ class Pokemon < ActiveRecord::Base
 
 	has_many :weaknesses, :dependent => :destroy
 	accepts_nested_attributes_for :weaknesses, :reject_if => lambda { |w| w[:type_id].blank?}, :allow_destroy => true
+	########################################
+	# Validations
+	########################################
+	validates :name, presence: true
+	validates :name, uniqueness: true
+	validates :type, presence: true
+    validates_attachment_content_type :image, :content_type => /\Aimage\/.*\Z/
 	########################################
 	# Methods
 	########################################

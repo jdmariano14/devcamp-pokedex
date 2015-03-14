@@ -5,17 +5,24 @@
 <table>
   <thead>
     <tr>
+      <th colspan="1"></th>
       <th>Name</th>
       <th>Type</th>
-      <th colspan="2"></th>
+      <th colspan="3"></th>
     </tr>
   </thead>
 
   <tbody>
     <% @pokemons.each do |pokemon| %>
       <tr>
-        <td><%= link_to pokemon.name, pokemon %></td>
+        <td>
+          <% if pokemon.image %>
+           <%= image_tag pokemon.image.url(:thumb) %>
+          <% end %>
+        </td>
+        <td><%= pokemon.name %></td>
         <td><%= pokemon.type.name %></td>
+        <td><%= link_to 'Show', pokemon %></td>
         <td><%= link_to 'Edit', edit_pokemon_path(pokemon) %></td>
         <td><%= link_to 'Destroy', pokemon, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

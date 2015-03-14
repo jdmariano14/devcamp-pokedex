@@ -10,6 +10,11 @@
   <%= @pokemon.type_id %>
 </p>
 
+<% if @pokemon.image %>
+  <strong>Image:</strong>
+  <%= image_tag @pokemon.image.url(:medium) %>
+<% end %>
+
 <% if @pokemon.moves.count > 0 %>
   <p><strong>Moves:</strong></p>
   <ol>
