@@ -43,5 +43,8 @@
 <% end %>
 
 <%= link_to 'Edit', edit_pokemon_path(@pokemon) %> |
+<% if @pokemon.evolves_from %>
+<%= link_to 'Show Prior', @pokemon.evolves_from %> |
+<% end %>
 <%= link_to 'Add Evolution', evolve_pokemon_path(@pokemon) %> |
 <%= link_to 'Back', pokemons_path %>
